@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Piloti - Aero Club Brescia</title>
+    <style>
+        body { font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        header { text-align: center; padding: 20px 10px; background-color: #ffffff; border-bottom: 1px solid #dee2e6; }
+        .logo { max-width: 250px; height: auto; }
+        .main-content { flex: 1; padding: 20px; }
+        h1 { text-align: center; color: #003366; margin-top: 0; margin-bottom: 40px; }
+        .container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .pilot-card { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; display: flex; flex-direction: column; }
+        .pilot-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .pilot-photo-container { width: 100%; height: 280px; overflow: hidden; background-color: #e9ecef; }
+        .pilot-photo { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .pilot-card:hover .pilot-photo { transform: scale(1.05); }
+        .pilot-info { padding: 15px 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .pilot-name { font-size: 1.4em; font-weight: 600; color: #003366; margin: 0 0 10px 0; text-align: center; }
+        .details-table { width: 100%; border-collapse: collapse; margin-top: auto; }
+        .details-table td { padding: 8px 4px; border-top: 1px solid #eee; font-size: 0.9em; }
+        .details-table td:first-child { font-weight: 600; color: #555; padding-right: 10px; width: 40%; }
+        .value-cell { text-align: center; border-radius: 4px; padding: 5px 8px !important; font-weight: 500; color: #fff; letter-spacing: 0.5px; }
+        .lic-ppl { background-color: #4CAF50; } .lic-cpl { background-color: #FF9800; } .lic-atpl { background-color: #2196F3; }
+        .rating-none { background-color: #FFFFFF; color: #333; border: 1px solid #ccc; } .rating-tvpru { background-color: #607D8B; } .rating-tvpru-nvfr { background-color: #546E7A; } .rating-tvpru-nvfr-mep { background-color: #455A64; } .rating-tvpru-nvfr-ir-mep { background-color: #37474F; } .rating-nvfr { background-color: #78909C; }
+        .h-total-40-100 { background-color: #C5E1A5; color: #333; } .h-total-101-150 { background-color: #AED581; color: #333; } .h-total-151-200 { background-color: #9CCC65; color: #333; } .h-total-201-250 { background-color: #8BC34A; } .h-total-251-300 { background-color: #7CB342; } .h-total-301-350 { background-color: #689F38; } .h-total-gt351 { background-color: #558B2F; }
+        .h-12m-0-10 { background-color: #FFCDD2; color: #333; } .h-12m-11-20 { background-color: #FFEB3B; color: #333; } .h-12m-21-30 { background-color: #B2FF59; color: #333; } .h-12m-gt31 { background-color: #64DD17; color: #333; }
+        footer { background-color: #003366; color: #f8f9fa; text-align: center; padding: 25px 20px; }
+        .footer-content { max-width: 800px; margin: 0 auto; font-size: 0.95em; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/logo.png" alt="Logo Aero Club Brescia" class="logo">
+    </header>
+    <div class="main-content">
+        <h1>I Piloti che hanno aderito all'iniziativa</h1>
+        <div class="container">
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_5439%20-%20Stefano%20Bisignano.jpeg" alt="Foto di Bisignano Stefano" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Bisignano Stefano</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru">T/VP/RU</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-gt351">>351</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/4bb6f3c5-d17d-42d9-85af-576a44779ddd%20-%20Davide%20Cipolla.jpeg" alt="Foto di Cipolla Davide" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Cipolla Davide</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr-mep">T/VP/RU, N/VFR, MEP</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-251-300">251/300</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/7e93f87c-e496-45c7-943c-3f072de84077%20-%20Pietro%20Oliani.jpg" alt="Foto di Oliani Pietro" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Oliani Pietro</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-cpl">CPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr-ir-mep">T/VP/RU, N/VFR, IR, MEP</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-101-150">101/150</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_2599%20-%20Enzo%20Mario.JPEG" alt="Foto di Mario Enzo" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Mario Enzo</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr">T/VP/RU, N/VFR</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-301-350">301/350</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_0425%20-%20AZA.jpeg" alt="Foto di Lugarini Moreno" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Lugarini Moreno</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_20250427_163541%20-%20Ali%20Mar72.jpg" alt="Foto di Maruelli Alioscia" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Maruelli Alioscia</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-nvfr">N/VFR</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-0-10">0-10</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/20250429_075341%20-%20Federico%20J.%20Turra.jpg" alt="Foto di Turra Federico" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Turra Federico</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr">T/VP/RU, N/VFR</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-gt351">>351</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/fototesseraandrea%20-%20andrea.jpg" alt="Foto di Moglia Andrea" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Moglia Andrea</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru">T/VP/RU</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-151-200">151/200</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-0-10">0-10</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_8376%20-%20patrik%20delfini.jpeg" alt="Foto di Delfini Patrik" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Delfini Patrik</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-251-300">251/300</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/17459429563656026306742213193289%20-%20Giulio%20Ballini.jpg" alt="Foto di Ballini Giulio" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Ballini Giulio</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru">T/VP/RU</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-gt351">>351</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_7967%20-%20Federico%20Caiola.jpeg" alt="Foto di Caiola Federico" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Caiola Federico</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/20250430_094152%20-%20Riccardo%20Caponi.jpg" alt="Foto di Caponi Riccardo" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Caponi Riccardo</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-201-250">201/250</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_2012%20-%20Giulio%20Ciampalini.jpeg" alt="Foto di Ciampalini Giulio" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Ciampalini Giulio</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-atpl">ATPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr-ir-mep">T/VP/RU, N/VFR, IR, MEP</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-251-300">251/300</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_20250722_191954%20-%20michele%20piccoli.jpg" alt="Foto di Piccoli Michele" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Piccoli Michele</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-0-10">0-10</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/00a78eed-79b0-471d-bf75-0305154e6e41%20-%20claudio%20assandri.jpeg" alt="Foto di Assandri Claudio" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Assandri Claudio</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/Onofrio%20Gianluigi%20panoramici%20-%20Gianluigi%20Onofrio.jpg" alt="Foto di Onofrio Gianluigi" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Onofrio Gianluigi</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-201-250">201/250</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-0-10">0-10</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_0688%20-%20Roberto%20Piscitelli.jpeg" alt="Foto di Piscitelli Roberto" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Piscitelli Roberto</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr-mep">T/VP/RU, N/VFR, MEP</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-301-350">301/350</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_1038%20-%20edoardo%20bellicini.jpeg" alt="Foto di Bellicini Edoardo" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Bellicini Edoardo</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/Immagine%20-%20Lord%20F.png" alt="Foto di Facconi Federico" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Facconi Federico</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr">T/VP/RU, N/VFR</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-101-150">101/150</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/Marco%20-%20Marco%20Petrarca.jpg" alt="Foto di Petrarca Marco" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Petrarca Marco</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-101-150">101/150</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_5268%20-%20Cristiano%20De%20Nobili.jpeg" alt="Foto di De Nobili Cristiano" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">De Nobili Cristiano</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-gt351">>351</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/321863515_547833027249887_4884234503908878508_n%20-%20Marco%20Valetti.jpg" alt="Foto di Valetti Marco" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Valetti Marco</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-ppl">PPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-none">Nessuno</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-40-100">40/100</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-11-20">11-20</td></tr>
+                    </table>
+                </div>
+            </div>
+             <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/IMG_20250829_141655%20-%20Amministratore.jpg" alt="Foto di Amministratore" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Amministratore</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-atpl">ATPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr-ir-mep">T/VP/RU, N/VFR, IR, MEP</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-gt351">>351</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-gt31">>31</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="pilot-card">
+                <div class="pilot-photo-container">
+                    <img src="https://raw.githubusercontent.com/avvbisignano/piloti/main/Screenshot_20250829_141829_Chrome%20-%20Mario%20Rossi.jpg" alt="Foto di Rossi Mario" class="pilot-photo">
+                </div>
+                <div class="pilot-info">
+                    <h2 class="pilot-name">Rossi Mario</h2>
+                    <table class="details-table">
+                        <tr><td>Licenza:</td><td class="value-cell lic-cpl">CPL(A)</td></tr>
+                        <tr><td>Rating:</td><td class="value-cell rating-tvpru-nvfr">T/VP/RU, N/VFR</td></tr>
+                        <tr><td>Ore totali:</td><td class="value-cell h-total-251-300">251/300</td></tr>
+                        <tr><td>Ore 12 mesi:</td><td class="value-cell h-12m-21-30">21-30</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Il flight sharing (volo in condivisione dei costi) è un’attività pienamente riconosciuta nell'Unione Europea secondo il Regolamento Europeo (UE) n. 965/2012.</p>
+            <p>L’EASA (European Union Aviation Safety Agency), al fine di promuovere la sicurezza dei voli non commerciali, ha redatto una Carta che stabilisce una serie di impegni per i piloti che effettuano voli a costi ripartiti e che l’Aero Club Brescia sottoscrive totalmente.</p>
+        </div>
+    </footer>
+</body>
+</html>
